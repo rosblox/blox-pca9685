@@ -30,4 +30,4 @@ services:
     restart: always
     network_mode: "host"
     privileged: true
-    command: ros2 run ros_pca9685 ros_pca9685_publisher
+    command: ros2 run ros_pca9685 ros_pca9685_subscriber
