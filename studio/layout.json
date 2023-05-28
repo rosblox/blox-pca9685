@@ -1,0 +1,21 @@
+{
+    "configById": {
+      "Publish!39gfeyt": {
+        "topicName": "/pca9685/cmd",
+        "datatype": "std_msgs/msg/Float32MultiArray",
+        "buttonText": "Publish",
+        "buttonTooltip": "",
+        "buttonColor": "#00A871",
+        "advancedView": true,
+        "value": "{\n  \"layout\": {\n    \"dim\": [\n      {\n        \"label\": \"velocity\",\n        \"size\": 16,\n        \"stride\": 0\n      }\n    ],\n    \"data_offset\": 0\n  },\n  \"data\": [1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0]\n}"
+      }
+    },
+    "globalVariables": {},
+    "userNodes": {},
+    "linkedGlobalVariables": [],
+    "playbackConfig": {
+      "speed": 1,
+      "messageOrder": "receiveTime"
+    },
+    "layout": "Publish!39gfeyt"
+  }
