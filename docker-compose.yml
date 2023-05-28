@@ -1,0 +1,33 @@
+version: '3.9'
+
+services:
+  nginx:
+    image: docker.io/library/nginx
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    network_mode: "host"
+    restart: always
+
+  rosblox-studio:
+    image: ghcr.io/rosblox/studio:latest
+    volumes:
+      - ./studio/layout.json:/src/layout.json
+    ports:
+      - 8080:8080
+    restart: always
+
+  ros-rosbridge-suite:
+    image: ghcr.io/rosblox/ros-rosbridge-suite:humble
+    ports:
+      - 9090:9090
+    restart: always
+    command: ros2 launch rosbridge_server rosbridge_websocket_launch.xml
+
+  ros-pca9685:
+    image: ghcr.io/rosblox/ros-pca9685:humble
+    devices:
+      - "/dev/i2c-1:/dev/i2c-1"
+    restart: always
+    network_mode: "host"
+    privileged: true
+    command: ros2 run ros_pca9685 ros_pca9685_publisher
